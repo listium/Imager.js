@@ -1,6 +1,8 @@
 ;(function (window, document) {
     'use strict';
-
+    if (!window) {
+      return null;
+    }
     var addEvent = (function () {
         if (document.addEventListener) {
             return function addStandardEventListener(el, eventName, fn) {
@@ -499,4 +501,4 @@
     }
     /* global -module, -exports, -define */
 
-}(window, document));
+}(typeof window !== 'undefined' ? window : null, document));
